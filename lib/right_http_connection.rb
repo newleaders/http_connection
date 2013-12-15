@@ -69,9 +69,9 @@ them.
   class HttpConnection
 
     # Number of times to retry the request after encountering the first error
-    HTTP_CONNECTION_RETRY_COUNT             = 3
+    HTTP_CONNECTION_RETRY_COUNT             = 20
     # Throw a Timeout::Error if a connection isn't established within this number of seconds
-    HTTP_CONNECTION_OPEN_TIMEOUT            = 5
+    HTTP_CONNECTION_OPEN_TIMEOUT            = 30
     # Throw a Timeout::Error if no data have been read on this connnection within this number of seconds
     HTTP_CONNECTION_READ_TIMEOUT            = 120
     # Length of the post-error probationary period during which all requests will fail
