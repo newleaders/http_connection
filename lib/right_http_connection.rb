@@ -399,12 +399,15 @@ them.
             exception = get_param(:exception) || RuntimeError
             raise exception.new('incompatible Net::HTTP monkey-patch')
           end
+
           # oops - we got a banana: log it
           error_add(e.message)
           @logger.warn("#{err_header} request failure count: #{error_count}, exception: #{e.inspect}")
 
           # We will be retrying the request, so reset the file pointer
           reset_fileptr_offset(request, mypos)
+
+          raise
 
         end
       end
